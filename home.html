@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"
+	<title>Predict Price</title>
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Pacifico">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Arimo">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='./style.css')}}">
+
+</head>
+
+<body>
+	<div class='login'>
+		<h1>Predict Price</h1>
+		<!...Form to enter new data for prediction...>
+		<form action="{{url_for('predict')}}" method="POST">
+				<input type='text' name='age' placeholder="Age" required="required" /><br>
+				<input type='text' name='sex' placeholder="Sex" required="required" /><br>
+				<input type='text' name='bmi' placeholder="BMI" required="required" /><br>
+				<input type='text' name='children' placeholder="Children" required="required" /><br>
+				<input type='text' name='smoker' placeholder="Smoker" required="required" /><br>
+				<input type='text' name='region' placeholder="Region" required="required" /><br>
+				<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+		</form>
+		My prediction: {{ pred }}
+	</div>
+</body>
+</html>
